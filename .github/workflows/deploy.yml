@@ -14,5 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build . -t 5788kanishk/myapp:02
-      - run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
       - run: docker push 5788kanishk/myapp:02
+
+
+      
